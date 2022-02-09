@@ -3,7 +3,7 @@ import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { fetchCountries } from './fetchCountries'
 
-const DEBOUNCE_DELAY = 300;
+const DEBOUNCE_DELAY = 300;  //делать HTTP-запрос спустя 300мс после того, как пользователь перестал вводить текст (используй пакет lodash.debounce.)
 // ------------------------------------------------------------------------
 
 const inputRef = document.querySelector('input#search-box');
@@ -12,7 +12,7 @@ const countryInfo = document.querySelector('.country-info');
 
 inputRef.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 function onInput() {
-    const textInput = inputRef.value.trim();
+    const textInput = inputRef.value.trim();  //trim() удаляет пробельные символы с начала и конца строки
 
     countriesList.innerHTML = '';
     countryInfo.innerHTML = '';
